@@ -68,7 +68,7 @@ struct light
 // Create some constants
 #define MAX_SCENE_BOUNDS 100.0
 
-#define MAX_LIGHTS 4
+#define MAX_LIGHTS 5
 #define MAX_MESHES 9
 #define MAX_TRIANGLES_PER_MESH 1486 // biggest mesh is 1486 triangles
 #define NUM_TRIANGLES_IN_SCENE 4450 // This is calculated in the console window

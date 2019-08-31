@@ -37,7 +37,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "FreeImage.h"
 
-#define MAX_LIGHTS 4
+#define MAX_LIGHTS 5
 #define MAX_MESHES 9
 #define MAX_TRIANGLES_PER_MESH 1486 // biggest mesh is 1486 triangles
 #define NUM_TRIANGLES_IN_SCENE 4450 // This is calculated in the console window
@@ -237,9 +237,9 @@ void renderScene()
 
 	// move and rotate the cube
 	test[1] = glm::mat4();
-	test[1] = glm::translate(test[1], glm::vec3(5 * sin(time+3.14159f/2.0f), 1.5, -5));
+	test[1] = glm::translate(test[1], glm::vec3(5 * sin(time), 1.5, -5));
 	test[1] = glm::rotate(test[1], -time, glm::vec3(0, 1, 0));
-	test[1] = glm::scale(test[1], glm::vec3((2 + sin(time - 3.14159f))) * glm::vec3(1.25));
+	test[1] = glm::scale(test[1], glm::vec3((3 + sin(time * 2)/2.0f)) * glm::vec3(1.25));
 
 	// car
 	test[2] = glm::mat4();
@@ -335,7 +335,7 @@ void renderScene()
 	lights[2].brightness = 2;
 
 	lights[2].pos = glm::vec4(
-		-5,
+		-6,
 		1,
 		4 * cos(time),
 		0
@@ -350,6 +350,18 @@ void renderScene()
 		-4 * cos(time),
 		1,
 		-8,
+		0
+	);
+
+	// blue light
+	lights[4].color = glm::vec4(0.0, 1.0, 0.0, 0.0);
+	lights[4].radius = 4;
+	lights[4].brightness = 2;
+
+	lights[4].pos = glm::vec4(
+		6,
+		1,
+		-4 * cos(time),
 		0
 	);
 
