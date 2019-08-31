@@ -233,7 +233,7 @@ void renderScene()
 	// scale the floor
 	test[0] = glm::mat4();
 	test[0] = glm::translate(test[0],glm::vec3(0, -0.5, 0));
-	test[0] = glm::scale(test[0], glm::vec3((sin(time) + 6.0f)) / 3.0f);
+	test[0] = glm::scale(test[0], glm::vec3(2.5f));
 
 	// move and rotate the cube
 	test[1] = glm::mat4();
